@@ -74,8 +74,8 @@ public class Homework {
         int[] num;
         num = new int[]{1, 2, 10, 3};
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < num.length; i++) {
-            max = Math.max(max, num[i]);
+        for (int j : num) {
+            max = Math.max(max, j);
         }
         return max;
     }

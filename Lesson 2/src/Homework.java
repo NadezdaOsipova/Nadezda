@@ -56,12 +56,12 @@ public class Homework {
      */
     public static double average(int[] array) {
         int[] num;
-        num = new int[]{1, 2, 3, 1, 5};
+        num = new int[]{1, 2, 3, 4, 6};
         int total = 0;
         for (int z = 0; z < num.length; z++) {
             total += num[z];
         }
-        double average = total / num.length;
+        double average = (double) total / num.length;
         System.out.println("Сумма массива: " + total);
         System.out.println("java average: " + average);
         return average;

@@ -14,8 +14,9 @@ public class Homework3 {
         foobar(10);
         foobar(15);
         printMatrix();
-        printPrimeNumbers();
+     //   printPrimeNumbers();
     }
+
 
     /**
      * Необходимо прочитать с консоли значение числа типа int,
@@ -27,7 +28,7 @@ public class Homework3 {
     private static void printArray() {
         int num;
         try (Scanner in = new Scanner(System.in)) {
-            System.out.println("Введите число: ");
+            System.out.println(" Введите число: ");
             num = in.nextInt();
         }
 
@@ -39,7 +40,6 @@ public class Homework3 {
             System.out.println(i + " ");
 
         }
-        // тут пишем логику
     }
 
     /**
@@ -51,13 +51,12 @@ public class Homework3 {
      */
     public static int operation(int number) {
         if (number > 0) {
-            number = number + 1;
+            number++;
         } else if (number < 0) {
-            number = number - 2;
+            number -= 2;
         } else number = 10;
         return number;
     }
-
 
     /**
      * На вход приходит массив целых чисел типа int
@@ -68,8 +67,8 @@ public class Homework3 {
     public static int calculateCountOfOddElementsInMatrix(int[] ints) {
         int[] Array = new int[]{1, 2, 3, 4, 5, 6};
         int k = 0;
-        for (int m = 0; m < Array.length; m++) {
-            if (Array[m] % 2 != 0) {
+        for (int i : Array) {
+            if (i % 2 != 0) {
                 k++;
             }
         }
@@ -86,32 +85,32 @@ public class Homework3 {
      * @param count - количество программистов
      */
     public static void countDevs(int count) {
-        int d;
-        Scanner in = new Scanner(System.in))
-        System.out.println("Введите число программистов ");
-        d = in.nextInt();
-
-
         // тут пишем логику
     }
-
     /**
      * Метод должен выводить разные строки в консоли в зависимости от некоторых условий:
      * - если остаток от деления на 3 равен нулю - выведите "foo" (example of number - 6)
      * - если остаток от деления на 5 равен нулю - вывести "bar" (example of number - 10)
      * - если остаток от деления на 3 и 5 равен нулю 0 ,то вывести "foobar" (example of number - 15)
      */
+
     public static void foobar(int number) {
-        // тут пишем логику
+        if (number % 3 == 0) {
+            if (number % 5 == 0) {
+                System.out.println("foobar");
+            }
+            System.out.println("foo");
+        } else if (number % 5 == 0) {
+            System.out.println("bar");
+        }
     }
 
     /**
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
      */
-    public static void calculateSumOfDiagonalElements() {
-        //пишем логику и выводим результат используя System.out.println
-    }
 
+    public static void calculateSumOfDiagonalElements() {
+    }
 
     /**
      * Шаги по реализации:
@@ -135,11 +134,12 @@ public class Homework3 {
      * <p>
      * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
      */
+
     public static void printMatrix() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите первое число: ");
+        System.out.println("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0435\u0440\u0432\u043E\u0435 \u0447\u0438\u0441\u043B\u043E: ");
         int firstNumber = in.nextInt();
-        System.out.println("Введите второе число: ");
+        System.out.println("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0442\u043E\u0440\u043E\u0435 \u0447\u0438\u0441\u043B\u043E: ");
         int secondNumber = in.nextInt();
 
         int[][] myArray = new int[firstNumber][secondNumber];
@@ -148,22 +148,15 @@ public class Homework3 {
                 myArray[i][j] = (int) (Math.random() * 100);
             }
         }
-        for (int i : myArray) {
-            System.out.println(i + " ");
-        }
-
-        // дорешать задачу
-
     }
+
 
     /**
      * Задача со звездочкой!
      * Метод должен печатать все простые числа <1000
      * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
      */
-    public static void printPrimeNumbers() {
-        // тут пишем логику
-    }
+
 }
 
 

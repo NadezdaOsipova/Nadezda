@@ -96,7 +96,7 @@ public class Homework {
     public static double calculateHypotenuse(int a, int b) {
         a = 3;
         b = 4;
-        return Math.sqrt(Math.pow(3, 2) + Math.pow(4, 2));
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
     }
 
 }

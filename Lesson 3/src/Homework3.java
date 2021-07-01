@@ -86,7 +86,20 @@ public class Homework3 {
      * @param count - количество программистов
      */
     public static void countDevs(int count) {
-        // тут пишем логику
+        int c100 = count % 100;
+        int c10 = c100 % 10;
+
+        if (c100 >= 10 && c100 <= 19) {
+            System.out.println(count + "программистов");
+        } else if (c10 >= 2 && c10 <= 4) {
+            System.out.println(count + " программиста");
+        } else if (c10 == 1) {
+            System.out.println(count + "программист");
+        } else {
+
+            System.out.println(count + " программистов");
+        }
+
     }
 
     /**
@@ -106,7 +119,7 @@ public class Homework3 {
         } else if (number % 5 == 0) {
             System.out.println("bar");
         }
-        }
+    }
 
 
     /**
@@ -114,7 +127,27 @@ public class Homework3 {
      */
 
     public static void calculateSumOfDiagonalElements() {
+        Scanner scanner = new Scanner(System.in);
+        int w = scanner.nextInt();         // Совсем не понимаю ошибку, он передает не хочет работать. Грустный смайлик
+        System.out.println(" Введите число: ");
+        int mat1[][] = new int[w][w];
+        int summa = 0;
+
+        for (int i = 0; i < mat1.length; i++) {
+            for (int j = 0; j < mat1.length; j++) {
+                mat1[i][j] = (int) (Math.random() * (25));
+                System.out.println(mat1[i][j]);
+                if (i == j) {
+                    summa += mat1[i][j];
+                }
+
+            }
+
+        }
+        System.out.println("Сумма = " + summa);
+
     }
+
 
     /**
      * Шаги по реализации:
@@ -141,15 +174,25 @@ public class Homework3 {
 
     public static void printMatrix() {
         Scanner in = new Scanner(System.in);
-        System.out.println("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0435\u0440\u0432\u043E\u0435 \u0447\u0438\u0441\u043B\u043E: ");
+        System.out.println("Введите первое число : ");
         int firstNumber = in.nextInt();
-        System.out.println("\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0442\u043E\u0440\u043E\u0435 \u0447\u0438\u0441\u043B\u043E: ");
+        System.out.println("Введите второе число : ");
         int secondNumber = in.nextInt();
 
         int[][] myArray = new int[firstNumber][secondNumber];
         for (int i = 0; i < myArray.length; i++) {
             for (int j = 0; j < myArray[i].length; j++) {
                 myArray[i][j] = (int) (Math.random() * 100);
+
+                if (myArray[i][j] % 3 == 0) {
+                    if (myArray[i][j] % 5 != 0) {
+                        System.out.println("+");
+                    } else {
+                        System.out.println("*");
+                    }
+                } else if (myArray[i][j] % 7 == 0) {
+                    System.out.println("-");
+                }
             }
         }
     }

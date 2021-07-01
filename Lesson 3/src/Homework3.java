@@ -14,7 +14,7 @@ public class Homework3 {
         foobar(10);
         foobar(15);
         printMatrix();
-     //   printPrimeNumbers();
+        //   printPrimeNumbers();
     }
 
 
@@ -28,7 +28,7 @@ public class Homework3 {
     private static void printArray() {
         int num;
         try (Scanner in = new Scanner(System.in)) {
-            System.out.println(" Введите число: ");
+            System.out.print(" Введите число: ");
             num = in.nextInt();
         }
 
@@ -37,9 +37,10 @@ public class Homework3 {
             printArray[i] = (int) (Math.random() * num);
         }
         for (int i : printArray) {
-            System.out.println(i + " ");
+            System.out.print(i + " ");
 
         }
+        System.out.println(" ");
     }
 
     /**
@@ -87,6 +88,7 @@ public class Homework3 {
     public static void countDevs(int count) {
         // тут пишем логику
     }
+
     /**
      * Метод должен выводить разные строки в консоли в зависимости от некоторых условий:
      * - если остаток от деления на 3 равен нулю - выведите "foo" (example of number - 6)
@@ -96,14 +98,16 @@ public class Homework3 {
 
     public static void foobar(int number) {
         if (number % 3 == 0) {
-            if (number % 5 == 0) {
+            if (number % 5 != 0) {
+                System.out.println("foo");
+            } else {
                 System.out.println("foobar");
             }
-            System.out.println("foo");
         } else if (number % 5 == 0) {
             System.out.println("bar");
         }
-    }
+        }
+
 
     /**
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали

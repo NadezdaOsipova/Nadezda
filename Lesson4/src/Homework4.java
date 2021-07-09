@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,6 +9,12 @@ import java.util.Scanner;
 public class Homework4 {
     public static void main(String[] args) {
         amountAmeba();
+        summa(2, 4);
+        summa(-2, 4);
+        summa(-2, -4);
+        System.out.println(summa(2, 4));
+        System.out.println(summa(-2, 4));
+        System.out.println(summa(-2, -4));
         reverseOrder();
         maxIndex();
         positiveNumber();
@@ -22,17 +29,30 @@ public class Homework4 {
 
     public static void amountAmeba() {
         int ameba = 1;
-        for (int i = 0; i < 24; i += 3) {
+        for (int i = 0; i <= 24; i += 3) {
             ameba *= 2;
             System.out.print(ameba + " ");
         }
         System.out.println();
         System.out.println("-----");
-        System.out.println();
+
     }
 
     //        2) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
+    public static int summa(int a, int b) {
+
+        int absA = Math.abs(a);
+        int absB = Math.abs(b);
+        int sum = 0;
+        int total = 0;
+
+        while (sum < absB) {
+            total += absA;
+            sum++;
+        }
+        return total;
+    }
 
 
 //        3) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
@@ -126,7 +146,7 @@ public class Homework4 {
         for (int i = 0; i < matrix.length; i++) {
             if (matrix[i] >= maxNumber) {
                 maxNumber = matrix[i];
-                maxIndex = i; //не выводит 1
+                maxIndex = i;
             }
         }
         System.out.println(" Максимальный элемент масcива: " + maxNumber + " и индекс его последнего вхождения " + maxIndex);
@@ -145,8 +165,10 @@ public class Homework4 {
         matrix = new int[20];
         for (int i = 0; i < matrix.length; i++) {
             matrix[i] = random.nextInt(20);
+            //     System.out.println(Arrays.toString(matrix);
             System.out.print(matrix[i] + " "); //пробовала вывести через Аrrays.to String  но выдает 20 массивов с 20 элементами
         }
+
         System.out.println();
         for (int i = 0; i < matrix.length; i++) {
             if (0 != matrix[i] % 2) {
@@ -160,6 +182,7 @@ public class Homework4 {
     }
 
 //        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+
 
 //        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}

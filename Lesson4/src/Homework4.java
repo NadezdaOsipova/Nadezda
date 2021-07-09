@@ -2,10 +2,6 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-
-//
-
-
 public class Homework4 {
     public static void main(String[] args) {
         amountAmeba();
@@ -19,10 +15,10 @@ public class Homework4 {
         maxIndex();
         positiveNumber();
         replacingTheIndexWithZero(new int[]{});
+        zeroElement(new int[]{});
         transpositionMatrix(new int[][]{});
 
     }
-
 
 //         1) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
 //   сколько амеб будет через 3, 6, 9, 12,..., 24 часа
@@ -53,7 +49,6 @@ public class Homework4 {
         }
         return total;
     }
-
 
 //        3) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
 
@@ -103,7 +98,6 @@ public class Homework4 {
 
     }
 
-
     //   5) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
 
@@ -127,7 +121,6 @@ public class Homework4 {
         System.out.println("-----");
         System.out.println();
     }
-
 
     //     6) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
@@ -181,7 +174,31 @@ public class Homework4 {
         System.out.println();
     }
 
-//        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+    //        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+    public static void zeroElement(int[] mas) {
+        mas = new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2};
+        int temp1 = 0;
+        int maxNumber = mas[0];
+        int maxIndex = 0;
+        System.out.println(Arrays.toString(mas));
+
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] >= maxNumber) {
+                maxNumber = mas[i];
+                maxIndex = i;
+            }
+        }
+        System.out.println(" Максимальный элемент масcива: " + maxNumber + " и индекс его последнего вхождения " + maxIndex);
+
+        temp1 = mas[maxIndex];
+        mas[maxIndex] = mas[0];
+        mas[0] = temp1;
+        System.out.println(Arrays.toString(mas));
+
+        System.out.println();
+        System.out.println("-----");
+        System.out.println();
+    }
 
 
 //        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
@@ -229,10 +246,7 @@ public class Homework4 {
             for (int j = 0; j < squareArray.length; j++) {
                 System.out.print(squareArray[j][i] + " ");
             }
-
         }
-
-
     }
 
 }

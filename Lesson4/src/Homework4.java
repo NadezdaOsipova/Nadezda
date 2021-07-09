@@ -11,8 +11,8 @@ public class Homework4 {
         reverseOrder();
         maxIndex();
         positiveNumber();
-        //   replacingTheIndexWithZero(int[] array);
-        //   transpositionMatrix();
+        replacingTheIndexWithZero(new int[]{});
+        transpositionMatrix(new int[][]{});
 
     }
 
@@ -100,7 +100,7 @@ public class Homework4 {
             System.out.print(oddNumbers[i] + " ");
         }
         System.out.println(" "); //выводит обратный массив без 1, только 49 элементов и мне это не нравится иначе пишет ошибку. что длина только 50
-        for (int b = oddNumbers.length - 1; b > 0; b--) {
+        for (int b = oddNumbers.length - 1; b >= 0; b--) {
             System.out.print(oddNumbers[b] + " ");
         }
         System.out.println();
@@ -139,10 +139,10 @@ public class Homework4 {
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
 //        Снова выведете массив на экран на отдельной строке.
 
-    public static void replacingTheIndexWithZero(int[] array) {
+    public static void replacingTheIndexWithZero(int[] matrix) {
         Random random = new Random();
 
-        int[] matrix = new int[20];
+        matrix = new int[20];
         for (int i = 0; i < matrix.length; i++) {
             matrix[i] = random.nextInt(20);
             System.out.print(matrix[i] + " "); //пробовала вывести через Аrrays.to String  но выдает 20 массивов с 20 элементами
@@ -176,14 +176,14 @@ public class Homework4 {
 //          6 7 8 9      2 7 3 5
 //          3 3 4 5      3 8 4 6
 //          1 5 6 7      4 9 5 7
-    public static void transpositionMatrix(int size) {
+    public static void transpositionMatrix(int[][] squareArray) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         System.out.println("Введите число: ");
-        size = scanner.nextInt();
+        int size = scanner.nextInt();
 
 // созаем матрицу, заполняем и выводи на экран
-        int squareArray[][] = new int[size][size];
+        squareArray = new int[size][size];
         for (int i = 0; i < squareArray.length; i++) {
             System.out.println();
             for (int j = 0; j < squareArray.length; j++) {
@@ -201,7 +201,6 @@ public class Homework4 {
         }
 // вывод транспонированной матрицы
         System.out.println();
-        System.out.println("-----");
         for (int i = 0; i < squareArray.length; i++) {
             System.out.println();
             for (int j = 0; j < squareArray.length; j++) {

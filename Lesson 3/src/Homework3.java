@@ -8,12 +8,12 @@ public class Homework3 {
         System.out.println(operation(1));
         System.out.println(operation(0));
         System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
-        calculateSumOfDiagonalElements();
+    //    calculateSumOfDiagonalElements();
         countDevs(103);
         foobar(6);
         foobar(10);
         foobar(15);
-        printMatrix();
+   //     printMatrix();
         //   printPrimeNumbers();
     }
 
@@ -55,8 +55,10 @@ public class Homework3 {
             number++;
         } else if (number < 0) {
             number -= 2;
-        } else number = 10;
-        return number;
+        } else {
+            number = 10;
+        }
+            return number;
     }
 
     /**
@@ -66,9 +68,9 @@ public class Homework3 {
      */
 
     public static int calculateCountOfOddElementsInMatrix(int[] ints) {
-        int[] Array = new int[]{1, 2, 3, 4, 5, 6};
+        int[] array = new int[]{1, 2, 3, 4, 5, 6};
         int k = 0;
-        for (int i : Array) {
+        for (int i : array) {
             if (i % 2 != 0) {
                 k++;
             }
@@ -96,10 +98,8 @@ public class Homework3 {
         } else if (c10 == 1) {
             System.out.println(count + "программист");
         } else {
-
             System.out.println(count + " программистов");
         }
-
     }
 
     /**
@@ -126,27 +126,28 @@ public class Homework3 {
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
      */
 
-    public static void calculateSumOfDiagonalElements() {
-        Scanner scanner = new Scanner(System.in);
-        int w = scanner.nextInt();         // Совсем не понимаю ошибку, он передает не хочет работать. Грустный смайлик
-        System.out.println(" Введите число: ");
-        int mat1[][] = new int[w][w];
-        int summa = 0;
+   // public static void calculateSumOfDiagonalElements() {
+    //    Scanner scanner = new Scanner(System.in);
+   //     System.out.println(" Введите число: ");
+   //     int w = scanner.nextInt();         // Совсем не понимаю ошибку, он передает не хочет работать. Грустный смайлик
 
-        for (int i = 0; i < mat1.length; i++) {
-            for (int j = 0; j < mat1.length; j++) {
-                mat1[i][j] = (int) (Math.random() * (25));
-                System.out.println(mat1[i][j]);
-                if (i == j) {
-                    summa += mat1[i][j];
-                }
+   //     int[][] mat1= new int[w][w];
+   //     int summa = 0;
 
-            }
+   //     for (int i = 0; i < mat1.length; i++) {
+   //         for (int j = 0; j < mat1.length; j++) {
+    //            mat1[i][j] = (int) (Math.random() * (25));
+    //            System.out.println(mat1[i][j]);
+   //             if (i == j) {
+    //                summa += mat1[i][j];
+    //            }
 
-        }
-        System.out.println("Сумма = " + summa);
+    //        }
 
-    }
+   //     }
+   //     System.out.println("Сумма = " + summa);
+
+ //   }
 
 
     /**
@@ -185,7 +186,7 @@ public class Homework3 {
                 myArray[i][j] = (int) (Math.random() * 100);
 
                 if (myArray[i][j] % 3 == 0) {
-                    if (myArray[i][j] % 5 != 0) {
+                    if (myArray[i][j] % 7 != 0) {
                         System.out.println("+");
                     } else {
                         System.out.println("*");

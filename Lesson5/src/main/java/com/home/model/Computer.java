@@ -5,10 +5,42 @@ import java.util.Scanner;
 
 public class Computer {
 
-    String processor; // процессор
-    double randomAccessMemory; //операвтивная память
-    double hardDisk; //жесткий диск
-    int fullCycleLife; // ресурс полных циклов
+    private String processor; // процессор
+    private double randomAccessMemory; //операвтивная память
+    private double hardDisk; //жесткий диск
+    private int fullCycleLife; // ресурс полных циклов
+
+    public String getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    public double getRandomAccessMemory() {
+        return randomAccessMemory;
+    }
+
+    public void setRandomAccessMemory(double randomAccessMemory) {
+        this.randomAccessMemory = randomAccessMemory;
+    }
+
+    public double getHardDisk() {
+        return hardDisk;
+    }
+
+    public void setHardDisk(double hardDisk) {
+        this.hardDisk = hardDisk;
+    }
+
+    public int getFullCycleLife() {
+        return fullCycleLife;
+    }
+
+    public void setFullCycleLife(int fullCycleLife) {
+        this.fullCycleLife = fullCycleLife;
+    }
 
     @Override
     public String toString() {
@@ -20,7 +52,7 @@ public class Computer {
                 '}';
     }
 
-//описание (вывод полей)
+    //описание (вывод полей)
 //    void specification() {
 //        System.out.println("Процессор:" + processor);
 //        System.out.println("Оперативная память:" + randomAccessMemory);
@@ -51,6 +83,7 @@ public class Computer {
             double randomNumber = (int) (Math.random() * 2);
 
             if (number == randomNumber) {
+                System.out.println("Компьютер включается!");
                 off();
             } else {
                 System.out.println(" Компьютер сгорел!");
@@ -60,8 +93,15 @@ public class Computer {
 
     void off() {
         fullCycleLife--;
+        System.out.println("Компьютер выключается!");
     }
 
+    public Computer(String processor, double randomAccessMemory, double hardDisk, int fullCycleLife) {
+        this.processor = processor;
+        this.randomAccessMemory = randomAccessMemory;
+        this.hardDisk = hardDisk;
+        this.fullCycleLife = fullCycleLife;
+    }
 }
 
 

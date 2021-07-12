@@ -48,8 +48,8 @@ public class PersonRegistry  {
 
 
         Person[] people = {Oleg,Alex,Igor,Vasya,Inna,Konstantin,Valentin,Zakhar,Ivan,Maks, Fedor,Edward,Sergey,
-                Pavel, Victor)
-}
+                Pavel, Victor};
+
 
 
 }

@@ -51,6 +51,11 @@ public class MainRegistry {
 
         Person[] person = {Oleg,Alex,Igor,Vasya,Inna,Konstantin,Valentin,Zakhar,Ivan,Maks, Fedor,Edward,Sergey,
                 Pavel, Victor};
+        PersonRegistry personRegistry = new PersonRegistry(person);
+
+    public void specification (String[] args){
+        System.out.println(person);
+    }
 
 
      }

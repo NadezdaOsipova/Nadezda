@@ -1,8 +1,10 @@
 package com.home.model;
 
-import static com.home.utils.Constants.*;
-
 public class PersonRegistry {
+    private static final int MIN_AGE_PERSON = 18;
+    private static final int MAX_AGE_PERSON = 27;
+    private static final String SEX_PERSON = "MALE";
+
     private Person[] person; //массив случайных людей
 
     public PersonRegistry(Person[] people) {
@@ -25,8 +27,9 @@ public class PersonRegistry {
         int count1 = 0;
         for (int i = 0; i < person.length; i++) {
             if (person.getName().equals(name)) {
-                count1++;
+                return count1;
             }
+            count1++;
             return count1;
         }
         return count1;

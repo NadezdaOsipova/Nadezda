@@ -19,7 +19,6 @@ public class Person {
         countPerson = 0;
     }
 
-
     public Person(String name, int age, String sex, Addres addres) {
         this.name = name;
         this.age = age;

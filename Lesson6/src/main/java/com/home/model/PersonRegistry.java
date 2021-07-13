@@ -1,19 +1,28 @@
 package com.home.model;
 
 public class PersonRegistry {
-    private Person[] people; //массив случайных людей
+    private Person[] person; //массив случайных людей
 
     public PersonRegistry(Person[] people) {
-        this.people = people;
+        this.person = people;
     }
 
-public int countPeople (Addres addres) {
+
+    public int countPeople(Addres addres) { // проживающие в городе Минск
         int count = 0;
-
-    for (int i = 0; i < people.length; i++) {
-        if (Person )
-
+        for (int i = 0; i < person.length; i++) {
+            Addres personsAddress = person.getAddres();
+            if (personsAddress.getCountry().equals(addres.getCountry()) &&
+                    personsAddress.getCity().equals(addres.getCity())) {
+                count++;
+            }
+        }
+        return count;
     }
-}
 
-    }
+    public
+
+
+
+
+

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 public class Person {
 
+
     private String name;
     private int age;
     private String sex;
@@ -19,10 +20,6 @@ public class Person {
     }
 
 
-//    public Person() {
-//    countPerson++;
-//    }
-
     public Person(String name, int age, String sex, Addres addres) {
         this.name = name;
         this.age = age;
@@ -32,11 +29,13 @@ public class Person {
 
     public Person() {
         this.age = age;
+        this.addres = addres;
     }
 
     public void setAddres() {
         this.addres = addres;
     }
+
 
     @Override
     public String toString() {

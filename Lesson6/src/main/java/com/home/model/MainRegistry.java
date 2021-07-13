@@ -49,8 +49,10 @@ public class MainRegistry {
     Person Victor = new Person("Victor", 26,"male", VictorAdress);
 
 
-        Person[] people = {Oleg,Alex,Igor,Vasya,Inna,Konstantin,Valentin,Zakhar,Ivan,Maks, Fedor,Edward,Sergey,
+        Person[] person = {Oleg,Alex,Igor,Vasya,Inna,Konstantin,Valentin,Zakhar,Ivan,Maks, Fedor,Edward,Sergey,
                 Pavel, Victor};
+
+
      }
 
 

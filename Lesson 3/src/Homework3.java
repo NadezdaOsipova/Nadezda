@@ -13,8 +13,8 @@ public class Homework3 {
         foobar(6);
         foobar(10);
         foobar(15);
-        //     printMatrix();
-        //   printPrimeNumbers();
+        printMatrix();
+        printPrimeNumbers();
     }
 
 
@@ -27,10 +27,9 @@ public class Homework3 {
 
     private static void printArray() {
         int num;
-        try (Scanner in = new Scanner(System.in)) {
-            System.out.print(" Введите число: ");
-            num = in.nextInt();
-        }
+        Scanner in = new Scanner(System.in);
+        System.out.print(" Введите число: ");
+        num = in.nextInt();
 
         int[] printArray = new int[num];
         for (int i = 0; i < printArray.length; i++) {
@@ -38,7 +37,6 @@ public class Homework3 {
         }
         for (int i : printArray) {
             System.out.print(i + " ");
-
         }
         System.out.println(" ");
     }
@@ -194,7 +192,6 @@ public class Homework3 {
             }
         }
     }
-
 
     /**
      * Задача со звездочкой!

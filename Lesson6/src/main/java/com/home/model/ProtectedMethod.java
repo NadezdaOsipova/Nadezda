@@ -1,14 +1,14 @@
 package com.home.model;
 
 public class ProtectedMethod {
-    private Addres addres;
+    private Address address;
 
-    public ProtectedMethod(Addres addres) {
-        this.addres = addres;
+    public ProtectedMethod(Address address) {
+        this.address = address;
     }
 
     public void info(){
    Person person = new Person();
-    person.setAddres();
+  //  person.setAddress();
 }
 }

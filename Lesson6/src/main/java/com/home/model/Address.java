@@ -1,11 +1,12 @@
 package com.home.model;
 
 
-public class Addres {
+public class Address {
     private String country;
     private String city;
 
-    public Addres(String country, String city) {
+
+    public Address(String country, String city) {
         this.country = country;
         this.city = city;
     }

@@ -11,7 +11,7 @@ public class Person {
     private String name;
     private int age;
     private String sex;
-    private Addres addres;
+    private Address address;
 
     public static int countPerson;
 
@@ -19,21 +19,19 @@ public class Person {
         countPerson = 0;
     }
 
-    public Person(String name, int age, String sex, Addres addres) {
+    public Person(String name, int age, String sex, Address address) {
         this.name = name;
         this.age = age;
         this.sex = sex;
-        this.addres = addres;
+        this.address = address;
     }
 
     public Person() {
         this.age = age;
-        this.addres = addres;
+        this.address = address;
     }
 
-    public void setAddres() {
-        this.addres = addres;
-    }
+
 
     public Person(String name) {
         this.name = name;
@@ -45,7 +43,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
-                ", addres=" + addres +
+                ", addres=" + address +
                 '}';
     }
 //    class PersonRegistry {

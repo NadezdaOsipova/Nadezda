@@ -36,6 +36,9 @@ public class Person {
         this.addres = addres;
     }
 
+    public Person(String name) {
+        this.name = name;
+    }
 
     @Override
     public String toString() {

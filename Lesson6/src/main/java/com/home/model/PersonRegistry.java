@@ -20,7 +20,18 @@ public class PersonRegistry {
         return count;
     }
 
-    public
+    public int countPeopleAlex(String name) { //  с именем Аlex
+        int count1 = 0;
+        for (int i = 0; i < person.length; i++) {
+
+            if (person.) {
+                continue;
+            }
+            count1++;
+        }
+        return count1;
+    }
+}
 
 
 

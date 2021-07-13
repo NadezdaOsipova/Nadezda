@@ -8,12 +8,12 @@ public class Homework3 {
         System.out.println(operation(1));
         System.out.println(operation(0));
         System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
-    //    calculateSumOfDiagonalElements();
+        calculateSumOfDiagonalElements();
         countDevs(103);
         foobar(6);
         foobar(10);
         foobar(15);
-   //     printMatrix();
+        //     printMatrix();
         //   printPrimeNumbers();
     }
 
@@ -58,7 +58,7 @@ public class Homework3 {
         } else {
             number = 10;
         }
-            return number;
+        return number;
     }
 
     /**
@@ -126,28 +126,25 @@ public class Homework3 {
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
      */
 
-   // public static void calculateSumOfDiagonalElements() {
-    //    Scanner scanner = new Scanner(System.in);
-   //     System.out.println(" Введите число: ");
-   //     int w = scanner.nextInt();         // Совсем не понимаю ошибку, он передает не хочет работать. Грустный смайлик
+    public static void calculateSumOfDiagonalElements() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(" Введите число: ");
+        int w = scanner.nextInt();
 
-   //     int[][] mat1= new int[w][w];
-   //     int summa = 0;
+        int[][] mat1 = new int[w][w];
+        int summa = 0;
 
-   //     for (int i = 0; i < mat1.length; i++) {
-   //         for (int j = 0; j < mat1.length; j++) {
-    //            mat1[i][j] = (int) (Math.random() * (25));
-    //            System.out.println(mat1[i][j]);
-   //             if (i == j) {
-    //                summa += mat1[i][j];
-    //            }
-
-    //        }
-
-   //     }
-   //     System.out.println("Сумма = " + summa);
-
- //   }
+        for (int i = 0; i < mat1.length; i++) {
+            for (int j = 0; j < mat1.length; j++) {
+                mat1[i][j] = (int) (Math.random() * (25));
+                System.out.println(mat1[i][j]);
+                if (i == j) {
+                    summa += mat1[i][j];
+                }
+            }
+        }
+        System.out.println("Сумма = " + summa);
+    }
 
 
     /**

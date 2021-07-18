@@ -11,11 +11,13 @@ public class Homework4 {
         System.out.println(summa(2, 4));
         System.out.println(summa(-2, 4));
         System.out.println(summa(-2, -4));
+        triangle();
         reverseOrder();
         maxIndex();
         positiveNumber();
         replacingTheIndexWithZero(new int[]{});
         zeroElement(new int[]{});
+        repeatingElements();
         transpositionMatrix(new int[][]{});
 
     }
@@ -63,6 +65,28 @@ public class Homework4 {
 //          * * *        * * *
 //            * *        * *
 //              *        *
+
+
+    public static void triangle() { // не могу понять как зеркально отразить эти 2 треугольника
+
+        int[][] triangle = new int[4][4];
+        int i, j;
+
+        for (i = triangle.length; i >= 0; i--) {
+            for (j = i; j < triangle.length; j++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        for (i = 0; i < triangle.length; i++) {
+            for (j = i; j < triangle.length; j++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+    }
 
 
 //        4)В переменную записываем число.
@@ -207,6 +231,39 @@ public class Homework4 {
 //        Пример: {0,34,46,31,20,1,28}
 //        Массив не имеет повторяющихся элементов
 
+    public static void repeatingElements() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        System.out.println("Введите число: ");
+        int size = scanner.nextInt();
+        int[] repeatingElements = new int[size];
+        int count = 0;
+        int numb = 0;
+        int maxNumb = 0;
+
+        for (int i = 0; i < repeatingElements.length; i++) {
+            repeatingElements[i] = random.nextInt(20);
+            System.out.print(repeatingElements[i] + " ");
+        }
+
+
+        for (int i = 0; i < repeatingElements.length; i++) {
+            count = 1; //обнуление подсчета
+            for (int j = i + 1; j < repeatingElements.length; j++) {
+                numb = repeatingElements[i];  //совпадение по числу
+                if (repeatingElements[i] == repeatingElements[j] && (j != i)) {
+                    count++;
+                }
+            }
+            if ((maxNumb <= count) && (count != 1)) {
+                maxNumb = count; //присваиваем максимальное
+                System.out.println("Число: " + numb + ", встречается: " + maxNumb);
+            }
+            if (maxNumb == 0) {
+                System.out.println("Число не повторяются!");
+            }
+        }
+    }
 
     //        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
 //        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).

@@ -3,20 +3,19 @@ package com.home.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-@AllArgsConstructor //создан конструктор на 2 поля
-
+@ToString
 public class Engine {
     private final String typeEngine;//тип двигателя
     private final double volumeEngine;//рабочий объем двигателя
+    private boolean isRuning;//
 
-    @Override
-    public String toString() {
-        return "Engine{" +
-                "typeEngine='" + typeEngine + '\'' +
-                ", volumeEngine=" + volumeEngine +
-                '}';
+    public Engine(String typeEngine, double volumeEngine) {
+        this.typeEngine = typeEngine;
+        this.volumeEngine = volumeEngine;
     }
 }
+

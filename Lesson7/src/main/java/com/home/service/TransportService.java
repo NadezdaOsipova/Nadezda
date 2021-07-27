@@ -2,7 +2,7 @@ package com.home.service;
 
 import com.home.models.*;
 
-public class TransportSelectionService {
+public class TransportService {
     public TransportServiсe createService(Transport transport) {
         TransportServiсe transportServiсe = null;
         switch (transport.getType()) {

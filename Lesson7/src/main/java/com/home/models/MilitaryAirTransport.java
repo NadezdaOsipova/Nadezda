@@ -1,7 +1,9 @@
 package com.home.models;
 
+import com.home.enums.TransportType;
 import lombok.Getter;
 import lombok.Setter;
+import static com.home.enums.TransportType.MILITARY;
 
 @Getter
 @Setter
@@ -13,6 +15,11 @@ public class MilitaryAirTransport extends AirTransport {//военный воз�
         super(power, maxSpeed, weight, brand, wingSpan, minLength);
         this.ejectionSystem = ejectionSystem;
         this.numberMissiles = numberMissiles;
+    }
+
+    @Override
+    public TransportType getType() {
+        return MILITARY;
     }
 
     @Override

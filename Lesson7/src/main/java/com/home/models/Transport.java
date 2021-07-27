@@ -19,7 +19,7 @@ public abstract class Transport implements Transportable {// основной к
     @Override
     public String toString() {
         return " Transport{" +
-                "power=" + getPower(power) +
+                "power=" + getPower() +
                 ", maxSpeed=" + maxSpeed +
                 ", weight=" + weight +
                 ", brand='" + brand + '\'' +

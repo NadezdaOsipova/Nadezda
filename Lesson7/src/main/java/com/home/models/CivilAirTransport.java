@@ -4,6 +4,8 @@ import com.home.enums.TransportType;
 import lombok.Getter;
 import lombok.Setter;
 
+import static com.home.enums.TransportType.CIVIL;
+
 @Getter
 @Setter
 public class CivilAirTransport extends AirTransport { //гражданский воздушный транспорт, наследуется от AirTransport
@@ -16,6 +18,10 @@ public class CivilAirTransport extends AirTransport { //гражданский �
         this.businessClass = businessClass;
     }
 
+    @Override
+    public TransportType getType() {
+        return CIVIL;
+    }
 
     @Override
     public String toString() {
@@ -25,6 +31,7 @@ public class CivilAirTransport extends AirTransport { //гражданский �
                 ", businessClass=" + businessClass +
                 '}';
     }
+
 
 
 }

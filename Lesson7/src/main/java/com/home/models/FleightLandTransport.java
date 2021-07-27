@@ -1,6 +1,9 @@
 package com.home.models;
+import com.home.enums.TransportType;
 import lombok.Getter;
 import lombok.Setter;
+
+import static com.home.enums.TransportType.FREIGHT;
 
 @Getter
 @Setter
@@ -13,10 +16,17 @@ public class FleightLandTransport extends LandTransport{ //грузовой тр
     }
 
     @Override
+    public TransportType getType() {
+        return FREIGHT;
+    }
+
+    @Override
     public String toString() {
         return super.toString() +
                 " FreightTransport{" +
                 "carryingCapacity=" + carryingCapacity +
                 '}';
     }
+
+
 }

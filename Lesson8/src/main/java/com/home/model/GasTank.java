@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class GasTank {
     private final double volumeGasTank; //общий объем бензобака
-    private double leveGasoline; //уровень бензина в баке
+    private double levelGasoline; //уровень бензина в баке
 
     //создаем конструктор только для объема бензобака, тк он final
     public GasTank(double volumeGasTank) {

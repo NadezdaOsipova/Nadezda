@@ -6,4 +6,5 @@ public interface CarService {
     void startEngine(); //завести двигатель
     void stopEngine(); //заглушить двигатель
     boolean isMoving();// машина движется
+    void refuelСar(); //дозаправить машину
 }

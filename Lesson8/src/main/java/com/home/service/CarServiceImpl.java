@@ -2,19 +2,25 @@ package com.home.service;
 
 import com.home.model.Car;
 
-import com.home.model.Engine;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import static com.home.utils.EndingComputation.getEndingComputationCurrentLevel;
 
-@Getter
-@Setter
-@AllArgsConstructor //подключили конструктор
 public class CarServiceImpl implements CarService {
     private final Car car; //создали машину
     private final EngineService engineService;
     private final GasTankService gasTankService;
 
+    //подключаем конструктор
+    public CarServiceImpl(Car car) {
+        this.car = car;
+        this.engineService = new EngineServiceImpl(car.getEngine());//задали двигатель
+        this.gasTankService = new GasTankServiceImpl(car.getGasTank());//задали бак
+    }
+
+    //информация о машине
+    @Override
+    public void info() {
+        System.out.println(car);
+    }
 
     //машина едет
     @Override
@@ -27,6 +33,12 @@ public class CarServiceImpl implements CarService {
         }
     }
 
+    //машина в движении
+    @Override
+    public boolean isMoving() {
+        return car.isMoving();
+    }
+
     //машина остановилась
     @Override
     public void stop() {
@@ -35,6 +47,11 @@ public class CarServiceImpl implements CarService {
         }
     }
 
+    //двигатель работает
+    @Override
+    public boolean isEngineRunning() {
+        return engineService.isRuning();
+    }
 
     //двигатель запущен
     @Override
@@ -61,16 +78,20 @@ public class CarServiceImpl implements CarService {
             System.out.println("Остановитесь и заглушите двигатель!");
         }
     }
-//машина движется
-        @Override
-        public boolean isMoving () {
-            return car.isMoving();
-        }
 
+    //текущий уровень бензина в автомобиле
+    @Override
+    public void currentFuelLevel() {
+        System.out.println("Текущий уровень топлива " + gasTankService.fuelLevel() + "литр" + getEndingComputationCurrentLevel(gasTankService.fuelLevel()));
+    }
+
+    //заправить автомобиль
     @Override
     public void refuelСar() {
-        refuelСar.
+        double refuelLevel = gasTankService.fuelLevel();
+        System.out.println("Текущий уровень топлива " + refuelLevel + "литр" + getEndingComputationCurrentLevel(refuelLevel));
     }
+
 }
 
 

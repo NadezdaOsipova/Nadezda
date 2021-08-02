@@ -1,4 +1,5 @@
 package com.home.model;
+
 import lombok.Getter;
 import lombok.Setter;
 

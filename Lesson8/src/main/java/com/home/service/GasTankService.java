@@ -1,14 +1,15 @@
 package com.home.service;
 
 public interface GasTankService {
-    boolean emptyGasTank(); //пустой ли бак (boolean)
 
-    double refuelGasTank(); //дозаправить бензобак
+    boolean emptyGasTank(); //пустой ли бак (boolean)
 
     double fuelLevel(); //уровень топлива
 
     double capacityTank();//вместимость бака
 
-   // double refuelGasTank(double fuelVolume); //дозаправка больше вместимости бака
+    double fuelLevel(double refuelVolume); //дозаправка больше положенного
+
+    double refuelGasTank(); //дозаправить бензобак
 
 }

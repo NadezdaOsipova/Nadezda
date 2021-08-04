@@ -1,41 +1,35 @@
 package com.home.service;
 
-import com.home.enums.TransportType;
 import com.home.models.LightLandTtransport;
-
-import com.home.models.Transport;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+
 public class LightLandTtransportServiceImpl implements TransportServiсe {
+
     public final LightLandTtransport lightLandTtransport;
 
-    @Override
-    public void generalMethod() {
-
+    public LightLandTtransportServiceImpl(LightLandTtransport lightLandTtransport) {
+        this.lightLandTtransport = lightLandTtransport;
     }
 
     @Override
     public void individualMethod() {
-        Transport transport = new Transport(2.0, 120, 2000, "Audi ");
         double time = 3;
-        System.out.printf("За время %f часа, автомобиль %s\n" +
-                "двигаясь с максимальной скоростью %d км/ч\n " +
-                " пройдет %f км и израсходует %f литров топлива.\n", time, transport.getBrand(), transport.getMaxSpeed(), calculatioDistance(lightLandTtransport, time), fuelСonsumption(lightLandTtransport, time));
-
+        System.out.println("За время " + time + " часа, автомобиль " + lightLandTtransport.getBrand() + "двигаясь с максимальной скоростью " + lightLandTtransport.getMaxSpeed() + " пройдет " + calculationdistance(lightLandTtransport, time) + " и израсходует " + fuelСonsumption(lightLandTtransport, time) + " литров бензина" );
+//        System.out.printf("За время %f часа, автомобиль %s\n" +
+//                "двигаясь с максимальной скоростью %d км/ч\n " +
+//                " пройдет %f км и израсходует %f литров топлива.\n", time, lightLandTtransport.getBrand(), lightLandTtransport.getMaxSpeed(), calculationdistance(lightLandTtransport, time), fuelСonsumption(lightLandTtransport, time));
     }
 
     //расчет расхода топлива
     public double fuelСonsumption(LightLandTtransport lightLandTtransport, double time) {
-        return calculatioDistance(lightLandTtransport, time) * lightLandTtransport.getFuelConsumption() / 100;
+        return calculationdistance(lightLandTtransport, time) * lightLandTtransport.getFuelConsumption() / 100;
     }
 
-    //расчет расстояния, которое пройдет авто за определенное время
-    public double calculatioDistance(LightLandTtransport lightLandTtransport, double time) {
+    public double calculationdistance(LightLandTtransport lightLandTtransport, double time) {
         return lightLandTtransport.getMaxSpeed() * time;
     }
 

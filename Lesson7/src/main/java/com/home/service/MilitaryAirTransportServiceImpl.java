@@ -11,12 +11,12 @@ import lombok.Setter;
 public class MilitaryAirTransportServiceImpl implements TransportServiсe {
     public final MilitaryAirTransport militaryAirTransport;
 
-    @Override
-    public void generalMethod() {
-        if (militaryAirTransport.ejectionSystem()) {
-            System.out.println("Катапультирование прошло успешно");
-        } else {
+
+    public void ejectionMethod() {
+        if (!militaryAirTransport.ejectionSystem){
             System.out.println("У вас нет такой системы");
+        } else {
+            System.out.println("Катапультирование прошло успешно");
         }
     }
 

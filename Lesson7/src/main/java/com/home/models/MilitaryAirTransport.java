@@ -3,10 +3,13 @@ package com.home.models;
 import com.home.enums.TransportType;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+
 import static com.home.enums.TransportType.MILITARY;
 
 @Getter
 @Setter
+@SuperBuilder
 public class MilitaryAirTransport extends AirTransport {//военный воздушный транспорт, наследуется от AirTransport
     public boolean ejectionSystem; // наличие системы катапультирования
     public int numberMissiles; // количество ракет на борту

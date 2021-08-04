@@ -11,11 +11,6 @@ import lombok.Setter;
 public class CivilAirTransportServiceImpl implements TransportServiсe {
     private final CivilAirTransport civilAirTransport;//создаем пассажирский самолет
 
-    @Override
-    public void generalMethod() {
-
-    }
-
     //метод, проверяющий вместимость самолета
     @Override
     public void individualMethod() {

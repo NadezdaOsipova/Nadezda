@@ -3,11 +3,14 @@ package com.home.models;
 import com.home.enums.TransportType;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import static com.home.enums.TransportType.CIVIL;
 
 @Getter
 @Setter
+
+@SuperBuilder
 public class CivilAirTransport extends AirTransport { //гражданский воздушный транспорт, наследуется от AirTransport
     private int numberPassengers; //количество пассажиров
     private boolean businessClass; //наличие бизнес класса

@@ -12,11 +12,6 @@ public class FleightLandTransportServiceImpl implements TransportServiсe {
     public final FleightLandTransport fleightLandTransport;
 
     @Override
-    public void generalMethod() {
-
-    }
-
-    @Override
     public void individualMethod() {
         double massa = 0;
         if (massa > fleightLandTransport.getCarryingCapacity()) {

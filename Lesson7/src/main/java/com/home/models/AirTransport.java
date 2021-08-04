@@ -2,9 +2,11 @@ package com.home.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
+@SuperBuilder
 public abstract class AirTransport extends Transport { //воздушный транспорт, который наследуется от класса Transport
     private double wingSpan;//размах крыльев
     private double minLength;//Минимальная длина взлётно-посадочной полосы для взлёта

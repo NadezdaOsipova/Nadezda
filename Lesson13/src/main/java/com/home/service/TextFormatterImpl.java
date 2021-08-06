@@ -35,6 +35,19 @@ public class TextFormatterImpl implements TextFormatter {
         System.out.println(count);
     }
 
+
+    public boolean palindrome() { //не выводится на консоль
+        String[] str = str1.split("\\W+");
+        for (int i = 0; i < str.length; i++) {
+            String reverseString = new StringBuilder(str[i]).reverse().toString();
+            if (reverseString.equalsIgnoreCase(str[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     @Override
     public void palindromeWords() { //не выводится на консоль
         String[] str = str1.split("\\W+");
@@ -46,7 +59,7 @@ public class TextFormatterImpl implements TextFormatter {
         }
     }
 
-    public  boolean palindromeWord(String first, String second) {//разобраться с return
+    public boolean palindromeWord(String first, String second) {//разобраться с return
         if (first.length() != second.length())
             for (int i = 0; i < first.length(); i++) {
                 if (first.charAt(i) != second.charAt(second.length() - 1 - i)) {

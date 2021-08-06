@@ -10,7 +10,8 @@ public class Homework13 {
         TextFormatter textFormatter = new TextFormatterImpl();
         textFormatter.wordCount();
         textFormatter.wordCount1();
-        textFormatter.palindromeWords();
+        textFormatter.palindrome();//не выводится, разобраться
+        textFormatter.palindromeWords();//не выводится, разобраться
         textFormatter.palindromeString();
     }
 }

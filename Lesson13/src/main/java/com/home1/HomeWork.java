@@ -10,17 +10,20 @@ public class HomeWork {
         String str3 = "жимолость";  //строка
         String str4 = "Топотала, топотала  Мадам топотиночки свои стоптала. А ещё потопочу Топотапочки стопчу. Не пойду я на попятки, Ведь остались топопятки. И пойду, пойду опять Я на пятках топотать. ";
 
+
+        //вырезать подстраку из строки
         System.out.println(str2);
         System.out.println(str2.substring(str2.indexOf("а"), str2.lastIndexOf("б")));
         System.out.println("----------------------");
 
+        //замена символов вхождения
         char f1 = str3.charAt(3);
         char f2 = str3.charAt(0);
         System.out.println(str3);
         System.out.println(str3.replace(f1, f2));
         System.out.println("----------------------");
 
-
+// вывести слова палиндромы
         System.out.println(str1);
         System.out.println("...");
         String[] str = str1.split(" ");
@@ -32,9 +35,9 @@ public class HomeWork {
         }
         System.out.println("----------------------");
 
-
-        System.out.println(str4);
-        System.out.println("...");
+//вывести предложения с 3-5 словами
+        System.out.println(str4); //доделать дамашку
+                System.out.println("...");
         String delimeter = "\\.";
         String[] subStr = str4.split(delimeter);
         for (int i = 0; i < subStr.length; i++) {

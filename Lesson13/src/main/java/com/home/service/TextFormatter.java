@@ -8,5 +8,7 @@ public interface TextFormatter {
 
     void palindromeWords(); //принимает строку и возвращает слова палиндроммы
 
+    boolean palindrome(); //принимает строку и возвращает слова палиндроммы
+
     void palindromeString(); //принимает строку, проверяет является ли она  полиндромом
 }

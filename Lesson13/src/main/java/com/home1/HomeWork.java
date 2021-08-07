@@ -23,7 +23,7 @@ public class HomeWork {
         System.out.println(str3.replace(f1, f2));
         System.out.println("----------------------");
 
-// вывести слова палиндромы
+       // вывести слова палиндромы
         System.out.println(str1);
         System.out.println("...");
         String[] str = str1.split(" ");
@@ -35,17 +35,17 @@ public class HomeWork {
         }
         System.out.println("----------------------");
 
-//вывести предложения с 3-5 словами
+        //вывести предложения с 3-5 словами
         System.out.println(str4); //вывожу текст для наглядности
         System.out.println("...");//разделяю текст для наглядности
         String delimeter = "\\.";//ввожу переменную по которой будет текст разделяться на предложения
-        String[] subStr = str4.split(delimeter);//массив предложений
+        String[] subStr = str4.split(delimeter);//массив предложений, разделееный переменной
 
-        for (int i = 0; i < subStr.length; i++) {//бегу по массиву
+        for (int i = 0; i < subStr.length; i++) {//бегу по массиву предложений
             String[] result = subStr[i].split(" ");//разделяю каждое предложение на слова
             int count = result.length; //записываю в переменную количество слов в предложение
             if (count >= 3 && count <= 5) { //задаю условия, что больше 3 и меньше 5
-                System.out.println(subStr[i]);
+                System.out.println(subStr[i]);//?? как вывести строку в которой палиндром????
 
             String reverseString = new StringBuilder(result[i]).reverse().toString();
             if (reverseString.equalsIgnoreCase(result[i])) {

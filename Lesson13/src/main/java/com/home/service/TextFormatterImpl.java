@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Arrays;
+
 @Getter
 @Setter
 @ToString
@@ -35,12 +37,15 @@ public class TextFormatterImpl implements TextFormatter {
         System.out.println(count);
     }
 
+    //Метод принимает строку и проверяет есть ли в строке слово-палиндром. Если есть возвращает true, если нет false
     public boolean palindrome() { //не выводится на консоль
-        String[] str = str1.split("\\W+");
+        String[] str = str1.split("\\w+");
+        System.out.println(Arrays.toString(str));
         for (int i = 0; i < str.length; i++) {
             String reverseString = new StringBuilder(str[i]).reverse().toString();
             if (reverseString.equalsIgnoreCase(str[i])) {
-                return true;
+                // return true;
+                System.out.println(str[i]);
             }
         }
         return false;
@@ -48,7 +53,7 @@ public class TextFormatterImpl implements TextFormatter {
 
     @Override
     public void palindromeWords() { //не выводится на консоль
-        String[] str = str1.split("\\W+");
+        String[] str = str1.split("\\w+");
         for (int i = 0; i < str.length; i++) {
             for (int j = i + 1; j < str.length - 1; j++) {
                 if (palindromeWord(str[i], str[j]))
@@ -74,7 +79,7 @@ public class TextFormatterImpl implements TextFormatter {
 //    Преобразуйте объект StringBuffer в Sting с помощью метода toString().
 //    Теперь сравните String и перевернутую, если true, данная строка является палиндромом.
 
-
+    // является ли строка-палиндромом
     public void palindromeString() {
         String result = str2.replaceAll("\\s+", "");
         StringBuffer stringBuffer = new StringBuffer(result);

@@ -36,19 +36,29 @@ public class HomeWork {
         System.out.println("----------------------");
 
 //вывести предложения с 3-5 словами
-        System.out.println(str4); //доделать дамашку
-                System.out.println("...");
-        String delimeter = "\\.";
-        String[] subStr = str4.split(delimeter);
-        for (int i = 0; i < subStr.length; i++) {
+        System.out.println(str4); //вывожу текст для наглядности
+        System.out.println("...");//разделяю текст для наглядности
+        String delimeter = "\\.";//ввожу переменную по которой будет текст разделяться на предложения
+        String[] subStr = str4.split(delimeter);//массив предложений
+
+        for (int i = 0; i < subStr.length; i++) {//бегу по массиву
+            String[] result = subStr[i].split(" ");//разделяю каждое предложение на слова
+            int count = result.length; //записываю в переменную количество слов в предложение
+            if (count >= 3 && count <= 5) { //задаю условия, что больше 3 и меньше 5
+                System.out.println(subStr[i]);
+
+            String reverseString = new StringBuilder(result[i]).reverse().toString();
+            if (reverseString.equalsIgnoreCase(result[i])) {
+                System.out.println(result[i] + " является словом палиндромом");
+            }
             System.out.println(subStr[i]);
-            int i1 = subStr.length;
-           // System.out.println(i1);
         }
+        }
+    }
     }
 
 
-}
+
 
 
 

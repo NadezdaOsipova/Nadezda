@@ -35,7 +35,6 @@ public class TextFormatterImpl implements TextFormatter {
         System.out.println(count);
     }
 
-
     public boolean palindrome() { //не выводится на консоль
         String[] str = str1.split("\\W+");
         for (int i = 0; i < str.length; i++) {
@@ -46,7 +45,6 @@ public class TextFormatterImpl implements TextFormatter {
         }
         return false;
     }
-
 
     @Override
     public void palindromeWords() { //не выводится на консоль

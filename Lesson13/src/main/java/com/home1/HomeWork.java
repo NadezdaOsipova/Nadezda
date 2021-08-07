@@ -47,7 +47,9 @@ public class HomeWork {
             if (count >= 3 && count <= 5 && hasPalindrom(result[i])) {
                 System.out.println(subStr[i]);
             }
-            System.out.println(count);
+
+            //!!!!!!!!!!!!!!!!!!!!!!не выводит нужное предложение !!!!!!!!!!!!!!!!!!!!!!!!!
+            System.out.println();
         }
     }
 

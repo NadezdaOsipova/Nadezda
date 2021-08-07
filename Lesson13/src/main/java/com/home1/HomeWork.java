@@ -47,7 +47,7 @@ public class HomeWork {
             if (count >= 3 && count <= 5 && hasPalindrom(result[i])) {
                 System.out.println(subStr[i]);
             }
-
+            System.out.println(subStr[i]);
             //!!!!!!!!!!!!!!!!!!!!!!не выводит нужное предложение !!!!!!!!!!!!!!!!!!!!!!!!!
             System.out.println();
         }
@@ -65,6 +65,8 @@ public class HomeWork {
 
 //  if (count >= 3 && count <= 5) { //задаю условия, что больше 3 и меньше 5
 //      System.out.println(subStr[i]);//?? как вывести строку в которой палиндром????
+
+
 
 //   String reverseString = new StringBuilder(result[i]).reverse().toString();
 //   if (reverseString.equalsIgnoreCase(result[i])) {

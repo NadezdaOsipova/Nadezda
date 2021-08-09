@@ -1,6 +1,6 @@
-package com.hw2.interfase;
+package com.hw2.closes.trousers;
 
-public class OuterWearImpl implements OuterWear {
+public class Trousers1 implements Trousers {
     @Override
     public void putOn() {
 

@@ -1,4 +1,4 @@
-package com.home.model;
+package com.hw1.robot;
 
 public class Robot {
 }

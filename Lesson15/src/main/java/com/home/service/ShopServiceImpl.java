@@ -19,6 +19,7 @@ public class ShopServiceImpl implements ShopService {
 
     }
 
+
     //метод принимает id товара и удаляет из списка товар с сообветствующим id
     @Override
     public void deleteProduct() {

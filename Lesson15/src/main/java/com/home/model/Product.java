@@ -1,23 +1,26 @@
 package com.home.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@Builder
 public class Product {
     int id;
-    int price;
     String name;
+    int price;
+
 
     @Override
     public String toString() {
-        return "com.home.model.Product{" +
+        return "Product{" +
                 "id=" + id +
-                ", price=" + price +
                 ", name='" + name + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

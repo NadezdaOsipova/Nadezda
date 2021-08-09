@@ -1,6 +1,6 @@
-package com.hw2.closes.trousers;
+package com.hw2.clothes.trousers;
 
-import com.hw2.closes.Сlothes;
+import com.hw2.clothes.Сlothes;
 
 public interface Trousers extends Сlothes {
     int TYPES = 2;

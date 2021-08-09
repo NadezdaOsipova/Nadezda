@@ -1,7 +1,7 @@
-package com.hw2.closes.outerwear;
+package com.hw2.clothes.outerwear;
 
-import com.hw2.closes.person.Status;
-import static com.hw2.closes.person.Status.*;
+import com.hw2.clothes.person.Status;
+import static com.hw2.clothes.person.Status.*;
 
 public class Jacket implements OuterWear {
     private Status status = Status.OFF;

@@ -1,9 +1,9 @@
-package com.hw2.closes.outerwear;
+package com.hw2.clothes.outerwear;
 
-import com.hw2.closes.person.Status;
+import com.hw2.clothes.person.Status;
 
-import static com.hw2.closes.person.Status.OFF;
-import static com.hw2.closes.person.Status.ON;
+import static com.hw2.clothes.person.Status.OFF;
+import static com.hw2.clothes.person.Status.ON;
 
 public class Raincoat implements OuterWear {
     private Status status = Status.OFF;

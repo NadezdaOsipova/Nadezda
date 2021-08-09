@@ -1,6 +1,6 @@
-package com.hw2.closes.trousers;
+package com.hw2.clothes.trousers;
 
-public class Shorts implements Trousers {
+public class Trousers1 implements Trousers {
     @Override
     public void putOn() {
 

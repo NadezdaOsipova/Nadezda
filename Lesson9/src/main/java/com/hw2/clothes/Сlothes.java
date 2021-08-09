@@ -1,4 +1,4 @@
-package com.hw2.closes;
+package com.hw2.clothes;
 
 public interface Сlothes {
     void putOn();

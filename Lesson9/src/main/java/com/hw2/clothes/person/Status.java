@@ -1,4 +1,4 @@
-package com.hw2.closes.person;
+package com.hw2.clothes.person;
 
 public enum Status {
     ON, OFF

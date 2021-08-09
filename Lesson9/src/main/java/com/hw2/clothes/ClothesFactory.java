@@ -2,6 +2,7 @@ package com.hw2.clothes;
 
 import com.hw2.clothes.outerwear.*;
 import com.hw2.clothes.shoes.*;
+import com.hw2.clothes.trousers.*;
 
 public class ClothesFactory {
 
@@ -18,7 +19,7 @@ public class ClothesFactory {
         }
     }
 
-    public Shoes choseOuterWear(int choiceOfClothes) {
+    public Shoes choseShoes(int choiceOfClothes) {
         switch (choiceOfClothes) {
             case 0:
                 return new Boots();
@@ -31,5 +32,14 @@ public class ClothesFactory {
         }
     }
 
-
+    public Trousers choseTrousers(int choiceOfClothes) {
+        switch (choiceOfClothes) {
+            case 0:
+                return new Shorts();
+            case 1:
+                return new Trousers1();
+            default:
+                throw new IllegalStateException("Неожиданное значени: " + choiceOfClothes % Shoes.TYPES);
+        }
+    }
 }

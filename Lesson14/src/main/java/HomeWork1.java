@@ -3,8 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class HomeWork1 {
-    public static final String OUTPUT_FILE = "Lesson14/src/main/resources/output.txt";
-    public static final String INPUT_FILE = "Lesson14/src/main/resources/input.txt";
+    public static final String OUTPUT_FILE = "Lesson14/src/main/resources/hw1/output.txt";
+    public static final String INPUT_FILE = "Lesson14/src/main/resources/hw1/input.txt";
 
     public static void main(String[] args) {
 

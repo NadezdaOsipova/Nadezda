@@ -1,8 +1,5 @@
 package com.home1;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class HomeWork {
     public static void main(String[] args) {
         String str1 = "Казак лазал по дереву. Чего же его туда занесло????.";  //строка
@@ -44,35 +41,50 @@ public class HomeWork {
         for (int i = 0; i < subStr.length; i++) {//бегу по массиву предложений
             String[] result = subStr[i].split(" ");//разделяю каждое предложение на слова
             int count = result.length; //записываю в переменную количество слов в предложение
-            if (count >= 3 && count <= 5 && hasPalindrom(result[i])) {
+            if (count >= 3 && count <= 5) {
                 System.out.println(subStr[i]);
+            } else if (hasPalindrom(result[i])) {
+                System.out.println(subStr[i]);
+            } else {
+                System.out.println("Нет предложений соответствующих заданым условиям");
             }
-            System.out.println(subStr[i]);
-            //!!!!!!!!!!!!!!!!!!!!!!не выводит нужное предложение !!!!!!!!!!!!!!!!!!!!!!!!!
+            //!!!!!!!!!!!!!!!!!!!!!!не выводит предложение со словом палиндромом  !!!!!!!!!!!!!!!!!!!!!!!!!
             System.out.println();
         }
     }
 
-    private static boolean hasPalindrom(String str4) {
-        String reverseString = new StringBuilder(str4).reverse().toString();
-        if (reverseString.equalsIgnoreCase(str4)) {
-            return true;
-        }
+    private static boolean hasPalindrom(String str) {
+        String[] SS = str.split("\\.");//массив предложений, разделеный переменной
+        for (int i = 0; i < SS.length; i++) {//бегу по массиву
+            String[] w = SS[i].split(" ");//разделяю каждое предложение на слова
+            String reverseString = new StringBuilder(w[i]).reverse().toString();//создается слово-реверс
+            if (reverseString.equalsIgnoreCase(SS[i])) {//сравнивание изначального слова со словом-реверсом
+                return true;//вывод на консоль
+            }
+                  }
+
         return false;
     }
 }
 
 
-//  if (count >= 3 && count <= 5) { //задаю условия, что больше 3 и меньше 5
-//      System.out.println(subStr[i]);//?? как вывести строку в которой палиндром????
+//  private static boolean hasPalindroms(String str4) {
+//     String[] subStr = str4.split("\\.");
+//     for (String SS : subStr) {
+//         if (isPalindrome(SS)) {
+//            System.out.println(SS);
+//       }
+//   }
+//   return false;
+//   }
 
-
-
-//   String reverseString = new StringBuilder(result[i]).reverse().toString();
-//   if (reverseString.equalsIgnoreCase(result[i])) {
-//       System.out.println(result[i] + " является словом палиндромом");
+//   private static boolean isPalindrome(String str4) {
+//      return str4.equalsIgnoreCase(new StringBuilder(str4).reverse().toString());
 //  }
-//  System.out.println(subStr[i]);
+
+
+
+
 
 
 

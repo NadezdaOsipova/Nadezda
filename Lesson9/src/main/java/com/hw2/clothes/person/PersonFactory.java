@@ -22,11 +22,10 @@ public class PersonFactory {
     public Person createPerson() {
         int numberName = n % Names.values().length;
         String personName = Names.values()[numberName].toString();
-        ArrayList<Clothes> clothesArrayList = new ArrayList<>();  //проблема со списком
+        ArrayList<Сlothes> clothesArrayList = new ArrayList<>();
         clothesArrayList.add(choseOuterWear(n));
         clothesArrayList.add(choesShoes(n));
         clothesArrayList.add(choesTrousers(n));
-
 
         return null;
     }

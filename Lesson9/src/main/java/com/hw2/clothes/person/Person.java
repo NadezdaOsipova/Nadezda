@@ -1,7 +1,5 @@
 package com.hw2.clothes.person;
 
-import com.hw2.clothes.Сlothes;
-
 import java.util.List;
 
 

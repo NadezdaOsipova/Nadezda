@@ -15,7 +15,7 @@ public class ClothesFactory {
             case 2:
                 return new Topcoat();
             default:
-                throw new IllegalStateException("Неожиданное значени: " + choiceOfClothes % OuterWear.TYPES);
+                throw new IllegalStateException("Неожиданное значение: " + choiceOfClothes % OuterWear.TYPES);
         }
     }
 
@@ -28,7 +28,7 @@ public class ClothesFactory {
             case 2:
                 return new Sneakers();
             default:
-                throw new IllegalStateException("Неожиданное значени: " + choiceOfClothes % Shoes.TYPES);
+                throw new IllegalStateException("Неожиданное значение: " + choiceOfClothes % Shoes.TYPES);
         }
     }
 
@@ -39,7 +39,7 @@ public class ClothesFactory {
             case 1:
                 return new Trousers1();
             default:
-                throw new IllegalStateException("Неожиданное значени: " + choiceOfClothes % Shoes.TYPES);
+                throw new IllegalStateException("Неожиданное значение: " + choiceOfClothes % Shoes.TYPES);
         }
     }
 }

@@ -1,4 +1,4 @@
-package hw1;
+package test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,10 +7,8 @@ import java.util.Arrays;
 
 import static constants.ConstantsFile.INPUT_FILE_HW1;
 
-public class TextFormatterImpl implements TextFormatter {
-
-    @Override
-    public void reading() {
+public class Test {
+    public static void main(String[] args) {
         try {
             FileInputStream fis = new FileInputStream(INPUT_FILE_HW1);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -25,15 +23,5 @@ public class TextFormatterImpl implements TextFormatter {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void write() {
-
-    }
-
-    @Override
-    public void words() {
-
     }
 }

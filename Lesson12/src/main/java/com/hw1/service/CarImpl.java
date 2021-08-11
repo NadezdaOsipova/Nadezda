@@ -7,11 +7,13 @@ import java.util.Scanner;
 public class CarImpl implements Car {
     @Override
     public void startCar() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(" Введите число: ");
-        int w = scanner.nextInt();
 
+    int number = (int) (Math.random()*21);
+        if (number % 2 == 0) {
 
+        } else {
+            System.out.println();
+        }
     }
 }
 

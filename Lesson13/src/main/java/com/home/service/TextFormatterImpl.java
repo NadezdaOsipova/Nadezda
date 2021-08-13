@@ -11,19 +11,13 @@ import java.util.Arrays;
 @ToString
 
 public class TextFormatterImpl implements TextFormatter {
-
-    private String str1 = "Мадам Анна шла в свой шалаш. Ее топот слышала вся округа. ";  //строка
-    private static String str2 = "Аргентина манит негра";  //строка
-
-    public TextFormatterImpl() {
-
-    }
+    private String str;
 
     @Override
-    public void wordCount() {
+    public void wordCount(String str) {
         int number = 0;
-        for (int i = 0; i < str1.length(); i++) {//бежим по строке
-            if (str1.charAt(i) == ' ') {
+        for (int i = 0; i < str.length(); i++) {//бежим по строке
+            if (str.charAt(i) == ' ') {
                 number++;
             }
         }
@@ -31,65 +25,36 @@ public class TextFormatterImpl implements TextFormatter {
     }
 
     @Override
-    public void wordCount1() {
-        String[] result = str1.split(" ");
+    public void wordCount1(String str) {
+        String[] result = str.split(" ");
         int count = result.length;
         System.out.println(count);
     }
 
-    //Метод принимает строку и проверяет есть ли в строке слово-палиндром. Если есть возвращает true, если нет false
-    public boolean palindrome() { //не выводится на консоль
-        String[] str = str1.split("\\w+");
-        System.out.println(Arrays.toString(str));
-        for (int i = 0; i < str.length; i++) {
-            String reverseString = new StringBuilder(str[i]).reverse().toString();
-            if (reverseString.equalsIgnoreCase(str[i])) {
-                // return true;
-                System.out.println(str[i]);
+    @Override
+    public void palindrome(String str) {
+        String[] str1 = str.split("[^\\wа-яА-Я]+");
+                for (int i = 0; i < str1.length; i++) {
+            String reverseString = new StringBuilder(str1[i]).reverse().toString();
+            if (reverseString.equalsIgnoreCase(str1[i])) {
+                System.out.println(str1[i] + " - слово палиндромом" );
             }
         }
-        return false;
     }
 
     @Override
-    public void palindromeWords() { //не выводится на консоль
-        String[] str = str1.split("\\w+");
-        for (int i = 0; i < str.length; i++) {
-            for (int j = i + 1; j < str.length - 1; j++) {
-                if (palindromeWord(str[i], str[j]))
-                    System.out.printf("%s (%d)<>%s (%d)\n", str[i], i, str[j], j);
-            }
-        }
-    }
-
-    public boolean palindromeWord(String first, String second) {//разобраться с return
-        if (first.length() != second.length())
-            for (int i = 0; i < first.length(); i++) {
-                if (first.charAt(i) != second.charAt(second.length() - 1 - i)) {
-                    return false;
-                }
-                return true;
-            }
-        return false;
-    }
-
-    //    StringBuffer предоставляет метод с именем reverse(), один из способов проверки палиндрома —
-//    Создайте объект StringBuffer, передав необходимую строку в качестве параметра конструктору.
-//    Обратное содержимое объекта с помощью метода reverse().
-//    Преобразуйте объект StringBuffer в Sting с помощью метода toString().
-//    Теперь сравните String и перевернутую, если true, данная строка является палиндромом.
-
-    // является ли строка-палиндромом
-    public void palindromeString() {
-        String result = str2.replaceAll("\\s+", "");
+    public void palindromeString(String str) {
+        String result = str.replaceAll("\\s+", "");
         StringBuffer stringBuffer = new StringBuffer(result);
         stringBuffer.reverse();
         String data = stringBuffer.toString();
         if (result.equalsIgnoreCase(data)) {
-            System.out.println("Строка является полиндромом");
+            System.out.println(str + " - строка является полиндромом");
         } else {
-            System.out.println("Строка не является полиндромом");
+            System.out.println(str + "- строка не является полиндромом");
         }
     }
-
 }
+
+
+

@@ -1,35 +1,20 @@
 package com.home.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Getter
 @Setter
-@AllArgsConstructor
-
 public class Shop {
-    private List<Product> productList; //список товаров
+    private List<Product> productList;
 
-    public Shop() {
-
-    }
-
-    public List<Product> Products() { //
+    public List<Product> getProductList() {
         if (productList == null) {
             productList = new ArrayList<>();
         }
         return productList;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Shop{" +
-                "productList='" + productList + '\'' +
-                '}';
     }
 }

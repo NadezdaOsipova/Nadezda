@@ -2,14 +2,15 @@ package com.home.service;
 
 import com.home.model.Product;
 
+import java.util.List;
+
 public interface ShopService {
 
-    void addProduct(Product product);  //принимает объект товара и добавляет его в список
+    void addProduct(Product product);// сохраняем товар
 
-    void productList(); //метод возвращает список всех товаров в магазине
+    List<Product> getAllProducts();//возвращаем список
 
-    void deleteProduct(); //метод принимает id товара и удаляет из списка товар с сообветствующим id
+    void editProduct(Product product); // редакстируем товар
 
-    void editingProduct(); //метод принимает  объект товара и редактирует список товаров
-
+    void deleteProduct(int id);
 }

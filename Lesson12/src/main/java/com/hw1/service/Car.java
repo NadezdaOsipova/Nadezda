@@ -1,5 +1,5 @@
 package com.hw1.service;
 
 public interface Car {
-   void startCar();
+   void startCar() throws Exception;
 }

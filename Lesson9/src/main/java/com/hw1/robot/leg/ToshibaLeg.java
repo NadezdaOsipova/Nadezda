@@ -1,0 +1,19 @@
+package com.hw1.robot.leg;
+
+import com.hw1.robot.abs.RobotParts;
+
+public class ToshibaLeg extends RobotParts implements ILeg {
+    public ToshibaLeg(int price) {
+        super(price);
+    }
+
+    @Override
+    public void step() {
+        System.out.println(" Нога Toshiba сделала шаг");
+    }
+
+    @Override
+    public int getPrice() {
+        return super.getPrice();
+    }
+}

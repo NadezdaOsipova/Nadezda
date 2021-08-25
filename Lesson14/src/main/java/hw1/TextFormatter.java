@@ -1,11 +1,11 @@
 package hw1;
 
+import java.io.IOException;
+import java.util.List;
+
 public interface TextFormatter {
 
-    void reading();
+    List<String> readFilesAsStringList(String path);//считываем в массив
 
-    void write();
-
-    void words();
-
+    void createNewFile(String path) throws IOException;//записываем в файл
 }

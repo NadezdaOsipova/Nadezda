@@ -1,46 +1,42 @@
 package hw1;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.Arrays;
-
-import static constants.ConstantsFile.INPUT_FILE_HW1;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TextFormatterImpl implements TextFormatter {
 
+    //считываем файл
     @Override
-    public void reading() {
-        try (FileInputStream fileInputStream = new FileInputStream(INPUT_FILE_HW1)) {
-            final byte[] bytes = new byte[fileInputStream.available()];
-            fileInputStream.read(bytes);
-            System.out.println(new String(bytes));
-        } catch (IOException exception) {
-            exception.printStackTrace();
+    public List<String> readFilesAsStringList(String path) {
+        List<String> stringList = new ArrayList<>();//выделяем память под список
+        try {
+            FileReader fr = new FileReader(path);
+            BufferedReader br = new BufferedReader(fr); // построчно читаем с файла с помощью BufferedReader
+            String line;//создаем пременную
+            while ((line = br.readLine()) != null) {//записываем в переменную line считанный файл и проверяем уловие,
+                // что файл не пустой
+                stringList.add(line.trim());//в список сохраняем stringList копии строк без пробелов(trim())
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        // try {
-        //  FileInputStream fis = new FileInputStream(INPUT_FILE_HW1);
-        //  ObjectInputStream ois = new ObjectInputStream(fis);
-        //  String[] word = (String[]) ois.readObject();
-        //  System.out.println(Arrays.toString(word));
-        //  ois.close();
-            //  int count = ois.readInt();
-            //String [] words = new String[count];
-            // for (int i = 0; i < count; i++) {
-            //    words[i] = (String) ois.readObject();
-            //   }
-        // } catch (IOException | ClassNotFoundException e) {
-        //     e.printStackTrace();
-        //  }
+        return stringList;//возращаем список
     }
 
+    //записываем файл
     @Override
-    public void write() {
-
+    public void createNewFile(String path) throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+            bw.flush();//при вызове flush файлы из буфера записываются в файл.
+        }
     }
 
-    @Override
-    public void words() {
-
-    }
 }
+
+
+
+
+
+
+

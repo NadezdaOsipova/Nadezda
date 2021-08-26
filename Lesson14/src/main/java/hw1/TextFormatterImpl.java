@@ -26,10 +26,11 @@ public class TextFormatterImpl implements TextFormatter {
 
     //записываем файл
     @Override
-    public void createNewFile(String path) throws IOException {
+    public List<String> createNewFile(String path) throws IOException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             bw.flush();//при вызове flush файлы из буфера записываются в файл.
         }
+        return null;
     }
 
     @Override

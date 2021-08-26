@@ -8,7 +8,7 @@ public class TextFormatterImpl implements TextFormatter {
 
     //считываем файл
     @Override
-    public List<String> readFilesAsStringList(String path) {
+    public List<String> readFilesAsStringList(String path)  {
         List<String> stringList = new ArrayList<>();//выделяем память под список
         try {
             FileReader fr = new FileReader(path);

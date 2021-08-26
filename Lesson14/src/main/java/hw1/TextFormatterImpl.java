@@ -32,6 +32,34 @@ public class TextFormatterImpl implements TextFormatter {
         }
     }
 
+    @Override
+    public boolean isPolindrome(String word) {
+        String reverseString = new StringBuilder(word).reverse().toString();
+        if (word.equalsIgnoreCase(reverseString) && word.length()>1) {
+            return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean arrayPolindrome(String[] words) {
+        for (String word:words) {
+            if (isPolindrome(word)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void addFile(String text, String path) throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
+            bw.write(text);
+            bw.flush();//при вызове flush файлы из буфера записываются в файл.
+        }
+    }
+
+
 }
 
 

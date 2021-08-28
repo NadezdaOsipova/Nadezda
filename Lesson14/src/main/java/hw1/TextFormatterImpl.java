@@ -3,6 +3,7 @@ package hw1;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TextFormatterImpl implements TextFormatter {
 
@@ -24,6 +25,27 @@ public class TextFormatterImpl implements TextFormatter {
         return stringList;//возращаем список
     }
 
+    @Override
+    public String readFilesAsString(String path) {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            FileReader fileReader = new FileReader(path);
+            int symbol;
+            while ((symbol = fileReader.read()) != -1) {
+                stringBuilder.append((char) symbol);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return processedString(stringBuilder.toString());
+    }
+
+    private String processedString(String text) {
+        return text.replaceAll("-*\r\n", "");
+    }
+
     //записываем файл
     @Override
     public void createNewFile(String path) throws IOException {
@@ -42,7 +64,7 @@ public class TextFormatterImpl implements TextFormatter {
     }
 
     @Override
-    public boolean arrayPolindrome(String[] words) {
+    public boolean wordRange(String[] words) {
         for (String word : words) {
             if (isPolindrome(word)) {
                 return true;
@@ -59,9 +81,20 @@ public class TextFormatterImpl implements TextFormatter {
         }
     }
 
+    @Override
+    public List<String> divisionIntoSentences(String text) {//разделение на предложения
+        return List.of(text.split("[.!?]"))
+                .stream()
+                .map(String::trim)
+                .collect(Collectors.toList());
+    }
 
+    @Override
+    public String[] divisionIntoWords(String text) {// разделение на слова
+        String delimeter = " ";//ввожу переменную по которой будет текст разделяться на слова
+        return text.split(delimeter);
+    }
 }
-
 
 
 

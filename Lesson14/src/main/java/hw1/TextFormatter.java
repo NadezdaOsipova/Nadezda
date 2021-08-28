@@ -9,8 +9,15 @@ public interface TextFormatter {
 
     void createNewFile(String path) throws IOException;//записываем в файл
 
-    boolean isPolindrome(String word);
+    boolean isPolindrome(String word);// слова - палиндромы
 
-    boolean arrayPolindrome(String[] words);
-    void addFile(String text, String path) throws IOException;
+    boolean wordRange(String[] words);//предложение из 3-5 слов
+
+    void addFile(String text, String path) throws IOException;//добавляем
+
+    List<String> divisionIntoSentences(String text);// разделение текста на предложения
+
+    String[] divisionIntoWords(String text);//разделение текста на слова
+
+    String readFilesAsString(String path);
 }

@@ -8,7 +8,7 @@ public class TextFormatterImpl implements TextFormatter {
 
     //считываем файл
     @Override
-    public List<String> readFilesAsStringList(String path)  {
+    public List<String> readFilesAsStringList(String path) {
         List<String> stringList = new ArrayList<>();//выделяем память под список
         try {
             FileReader fr = new FileReader(path);
@@ -26,25 +26,24 @@ public class TextFormatterImpl implements TextFormatter {
 
     //записываем файл
     @Override
-    public List<String> createNewFile(String path) throws IOException {
+    public void createNewFile(String path) throws IOException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             bw.flush();//при вызове flush файлы из буфера записываются в файл.
         }
-        return null;
     }
 
     @Override
     public boolean isPolindrome(String word) {
         String reverseString = new StringBuilder(word).reverse().toString();
-        if (word.equalsIgnoreCase(reverseString) && word.length()>1) {
-            return  true;
+        if (word.equalsIgnoreCase(reverseString) && word.length() > 1) {
+            return true;
         }
         return false;
     }
 
     @Override
     public boolean arrayPolindrome(String[] words) {
-        for (String word:words) {
+        for (String word : words) {
             if (isPolindrome(word)) {
                 return true;
             }

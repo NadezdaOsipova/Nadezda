@@ -22,7 +22,7 @@ public class HomeWork14_1 {
 //        task3();
     }
 
-    private static void task1() throws IOException {
+    private static void task1() {
         System.out.println("Слова палиндромы");
         try {
             List<String> stringList = textFormatter.readFilesAsStringList(INPUT_FILE_HW1);
@@ -38,9 +38,11 @@ public class HomeWork14_1 {
 
     private static void task2() throws IOException {
         System.out.println("Разделение на предложения");
-        textFormatter.readFilesAsStringList(INPUT_FILE_HW2);
-        List<String> list= textFormatter.
-                textFormatter.createNewFile(OUTPUT_FILE_HW2);
+        List<String> files = textFormatter.readFilesAsStringList(INPUT_FILE_HW2);
+        textFormatter.createNewFile(OUTPUT_FILE_HW2);
+        for (String file : files ) {
+
+        }
     }
 
 }

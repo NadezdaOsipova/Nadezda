@@ -7,7 +7,7 @@ public interface TextFormatter {
 
     List<String> readFilesAsStringList(String path) throws IOException;//считываем в массив
 
-    List<String> createNewFile(String path) throws IOException;//записываем в файл
+    void createNewFile(String path) throws IOException;//записываем в файл
 
     boolean isPolindrome(String word);
 
